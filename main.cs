@@ -4,9 +4,16 @@ namespace CSharp_Learning
     internal class MyClass
     {
 
+
+/*
+
+string str ="Hello Bro";
+str.IndexOf("Bro");  <--- it will return 6 as Bro word start from 6.We use    string_variable.IndexOf(string_to_find)   function to get the position of that string
+
+*/
         static void Main()
         {
-            int counter=0;
+            int counter = 0;
             Console.WriteLine("Enter A String :");
             string str = Console.ReadLine() ?? "";
 
@@ -28,7 +35,7 @@ namespace CSharp_Learning
 
         Replacer: //Start again if the program has the replaceable word multytime
             string tmp1 = "";
-            string tmp2="";
+            string tmp2 = "";
             if (str.IndexOf(str2) >= 0) // Check if the string has the word we want to replace. if has then index will be 0 or greater than 0
             {
                 for (int i = 0; i < str.IndexOf(str2); i++) //Part before replace word will be stored in tmp1
@@ -36,7 +43,7 @@ namespace CSharp_Learning
                     tmp1 += str[i];
                 }
 
-                for (int j = str.IndexOf(str2)+str2.Length; j < str.Length; j++) //Part after replace word will be stored in tmp2
+                for (int j = str.IndexOf(str2) + str2.Length; j < str.Length; j++) //Part after replace word will be stored in tmp2
                 {
                     tmp2 += str[j];
                 }
@@ -45,12 +52,12 @@ namespace CSharp_Learning
                 counter++;
                 goto Replacer;
             }
-           else
+            else
             {
- 
+
                 Console.WriteLine("After Replacement Operation: ");
                 Console.WriteLine($"Total {counter} Word/s replaced");
-                Console.WriteLine( str );
+                Console.WriteLine(str);
             }
 
         }
